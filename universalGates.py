@@ -17,26 +17,29 @@ class Gate(object):
         self.logic()
         return self.output
 
+
 """ basic gates classes """
+
 class AndGate(Gate):
-    """ class representing AND gate """
+    """ class for AND gate """
 
     def logic(self):
         self.output = self.input[0] and self.input[1]
-
 
 class OrGate(Gate):
-    """ class representing OR gate """
+    """ class for OR gate """
 
     def logic(self):
         self.output = self.input[0] and self.input[1]
 
-
 class NotGate(Gate):
-    """ class representing NOT gate """
+    """ class for NOT gate """
 
     def logic(self):
         self.output = not self.input[0]
+
+
+""" Universal gates """
 
 class NandGate(AndGate, NotGate):
     pass
