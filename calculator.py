@@ -1,30 +1,35 @@
 """ calculator script which can perform addition, substraction, division and multiplication """
 
-import sys
+import click
 
+@click.group()
+def cli():
+    pass
+
+@click.command()
+@click.option('--input_1', default = 0, help = 'First input value')
+@click.option('--input_2', default = 0, help = 'Second input value')
 def add(input_1, input_2):
     """ implimentation of addition """
     print input_1 + input_2,
 
+@click.command()
+@click.option('--input_1', default = 0, help = 'First input value')
+@click.option('--input_2', default = 0, help = 'Second input value')
 def subtract(input_1, input_2):
     """ implimentation of substraction """
     print input_1 - input_2,
 
+@click.command()
+@click.option('--input_1', default = 0, help = 'First input value')
+@click.option('--input_2', default = 0, help = 'Second input value')
 def division(input_1, input_2):
     """ implimentation of division """
     print input_1 / input_2,
 
+@click.command()
+@click.option('--input_1', default = 0, help = 'First input value')
+@click.option('--input_2', default = 0, help = 'Second input value')
 def multiply(input_1, input_2):
     """ implimentation of multiplication """
     print input_1 * input_2,
-
-""" system call """
-
-if 'add' in sys.argv[1] :
-    add(int(sys.argv[2]), int(sys.argv[3]))
-elif 'subtract' in sys.argv[1] :
-    subtract(int(sys.argv[2]), int(sys.argv[3]))
-elif 'division' in sys.argv[1] :
-    division(int(sys.argv[2]), int(sys.argv[3]))
-else:
-    multiply(int(sys.argv[2]), int(sys.argv[3]))
