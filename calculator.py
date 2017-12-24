@@ -2,47 +2,25 @@
 
 import click
 
-@click.group()
-def cli():
-    """ click group """
-    pass
-
 @click.command()
-@click.argument('input_1')
-@click.argument('input_2')
-def add(input_1, input_2):
-    """ implimentation of addition """
-    result = int(input_1) + int(input_2)
-    click.echo(result)
-
-@click.command()
-@click.argument('input_1')
-@click.argument('input_2')
-def subtract(input_1, input_2):
-    """ implimentation of substraction """
-    result = int(input_1) - int(input_2)
-    click.echo(result)
-
-@click.command()
-@click.argument('input_1')
-@click.argument('input_2')
-def multiply(input_1, input_2):
-    """ implimentation of division """
-    result = int(input_1) * int(input_2)
-    click.echo(result)
-
-@click.command()
-@click.argument('input_1')
-@click.argument('input_2')
-def divide(input_1, input_2):
-    """ implimentation of multiplication """
-    result = int(input_1) / int(input_2)
-    click.echo(result)
-
-cli.add_command(add)
-cli.add_command(subtract)
-cli.add_command(multiply)
-cli.add_command(divide)
+@click.option('--add', nargs = 2, type = float)
+@click.option('--subtract', nargs = 2, type = float)
+@click.option('--multiply', nargs = 2, type = float)
+@click.option('--divide', nargs = 2, type = float)
+def cli(add,subtract,multiply,divide):
+    """ controll system """
+    if add:
+        """ implimentation of addition """
+        click.echo(add[0] + add[1])
+    elif subtract:
+        """ implimentation of substraction """
+        click.echo(subtract[0] - subtract[1])
+    elif multiply:
+        """ implimentation of multiplication """
+        click.echo(multiply[0] * multiply[1])
+    elif divide:
+        """ implimentation of division """
+        click.echo(divide[0] / divide[1])
 
 if __name__ == '__main__':
     cli()
