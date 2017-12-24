@@ -54,11 +54,12 @@ class NorGate(OrGate, NotGate):
 @click.command()
 @click.option('--nand', nargs = 2, type = int)
 @click.option('--nor', nargs = 2, type = int)
-def cli(nandGate,norGate):
-    if nandGate:
+def cli(nand,nor):
+    if nand:
         gate = NandGate(nand)
-        click.echo(gate.output
-    else norGate:
+        click.echo(gate.output)
+        print gate.output
+    elif nor:
         gate = NorGate(nand)
         click.echo(gate.output)
 
