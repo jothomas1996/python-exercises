@@ -1,5 +1,7 @@
 """ creating  universal gates - NAND and NOR """
 
+import click
+
 class Gate(object):
     """ base gate class """
 
@@ -46,3 +48,19 @@ class NandGate(AndGate, NotGate):
 
 class NorGate(OrGate, NotGate):
     pass
+
+
+""" excetion code """
+@click.command()
+@click.option('--nand', nargs = 2, type = int)
+@click.option('--nor', nargs = 2, type = int)
+def cli(nandGate,norGate):
+    if nandGate:
+        gate = NandGate(nand)
+        click.echo(gate.output
+    else norGate:
+        gate = NorGate(nand)
+        click.echo(gate.output)
+
+if __name__ == '__main__':
+    cli()
