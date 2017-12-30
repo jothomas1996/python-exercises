@@ -16,8 +16,6 @@ class Gate(object):
 
     def output(self):
         """ output of the gate """
-        self.logic()
-        print 'logic'
         return self.output
 
 
@@ -27,13 +25,13 @@ class AndGate(Gate):
     """ class for AND gate """
 
     def logic(self):
-        self.output = self.input[0] and self.input[1]
+        self.output = self.input[0][0] and self.input[0][1]
 
 class OrGate(Gate):
     """ class for OR gate """
 
     def logic(self):
-        self.output = self.input[0] and self.input[1]
+        self.output = self.input[0][0] or self.input[0][1]
 
 class NotGate(Gate):
     """ class for NOT gate """
@@ -44,31 +42,37 @@ class NotGate(Gate):
 
 """ Universal gates """
 
-class NandGate(AndGate):
+class NandGate(AndGate, NotGate):
     """ class for nand gate """
     def logic(self):
-        andGate = super(self, nand).logic()
-        NotGate.__init__(self, andGate)
-        NotGate.logic(self)
+        andGate = AndGate(self.input[0])
+        andGate.logic()
+        notGate = NotGate(andGate.output)
+        notGate.logic()
+        self.output = notGate.output
 
 class NorGate(OrGate, NotGate):
     """ class for nor gate """
     def logic(self):
-        orGate = super(self, nor).logic()
-        NotGate.__init__(self, orGate)
-        NotGate.logic(self)
+        orGate = OrGate(self.input[0])
+        orGate.logic()
+        notGate = NotGate(orGate.output)
+        notGate.logic()
+        self.output = notGate.output
 
 
 """ excetion code """
 @click.command()
-@click.option('--nand', nargs = 2, type = bool)
-@click.option('--nor', nargs = 2, type = bool)
+@click.option('--nand', nargs = 2, type = int)
+@click.option('--nor', nargs = 2, type = int)
 def cli(nand,nor):
     if nand:
         gate = NandGate(nand)
-        print gate.output
+        gate.logic()
+        click.echo(gate.output)
     elif nor:
-        gate = NorGate(nand)
+        gate = NorGate(nor)
+        gate.logic()
         click.echo(gate.output)
 
 if __name__ == '__main__':
