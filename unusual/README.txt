@@ -1,4 +1,4 @@
-Log Date : 5th January 2017
+Log Date : 6th January 2017
 
 
 Pandigital Number
@@ -45,3 +45,12 @@ limits of the operands as 10000, as the largest possible 4
 digit value is 9999.
 
 #===========================================================
+
+Log Date : 7th January 2017
+
+ERROR :::: The code is running fine, but when run with small
+search space limits like 200, I obtain a set of solutions 
+starting with, 27 * 198 = 5346. But when running with larger
+limits such as 1000, I obtain more results such as 12 * 483 
+= 5796, which is supposed to occur before 27 * 198.
+[NOT RESOLVED]

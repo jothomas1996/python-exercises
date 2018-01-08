@@ -22,8 +22,8 @@ def scan():
 	checked = [] #List to hold checked pairs
 	unusual = [] #List to hold found unusual products with operands
 	unusualProduct = [] #List to hold found unusual products
-	for m in range(40):
-		for n in range(200):
+	for m in range(1000):
+		for n in range(1000):
 			#Check if this calculation has occured before
 			if set([m,n]) not in checked:
 				sys.stdout.write('\r' + 'Calculation ' + str(calculationCount + 1) + ', Unusual Products : ' + str(unusualCount))
