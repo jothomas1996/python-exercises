@@ -23,6 +23,12 @@ documentation, resoning and explanation to specific section
 and functions of the code. This also acts as a log during
 the processing of code creation.
 #-----------------------------------------------------------
+Functions Used
+#-----------------------------------------------------------
+check_if_pandigital - Checks if passed argument is pandigital
+scan - Scans through all values to find unusual product
+cli - Main function
+#-----------------------------------------------------------
 
 1 * 1000 = 1000
 1 * 9999 = 9999
@@ -37,6 +43,5 @@ goes beyond 4 digits, then for sure the product will have
 more than 9 digits. Therefor, in our search we can set the
 limits of the operands as 10000, as the largest possible 4
 digit value is 9999.
-
 
 #===========================================================

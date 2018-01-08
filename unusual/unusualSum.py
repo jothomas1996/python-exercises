@@ -20,7 +20,8 @@ def scan():
 	print 'Scanning for unusual products'
 	calculationCount, unusualCount = 0, 0
 	checked = [] #List to hold checked pairs
-	unusual = [] #List to hold found unusual products
+	unusual = [] #List to hold found unusual products with operands
+	unusualProduct = [] #List to hold found unusual products
 	for m in range(40):
 		for n in range(200):
 			#Check if this calculation has occured before
@@ -34,11 +35,12 @@ def scan():
 					unusualCount += 1
 					print '\n', string
 					unusual.append(string)
-	return unusual, calculationCount, unusualCount
+					unusualProduct.append(m * n) #Storing the product to list
+	return unusualProduct, unusual, calculationCount, unusualCount
 
 def cli():
 	""" Main function """
-	unusual, calculationCount, unusualCount = scan()
+	unusualProduct, unusual, calculationCount, unusualCount = scan()
 
 	#Print out values
 	print '\n\nValues Found : '
@@ -47,6 +49,7 @@ def cli():
 
 	print '\nTotal number of calcuulations made : ', calculationCount
 	print 'Total number of unusual products found : ', unusualCount
+	print 'Sum of unusual products found : ', sum(unusualProduct)
 
 if __name__ == '__main__':
 	cli()
