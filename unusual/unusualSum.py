@@ -25,7 +25,7 @@ def scan():
 		for n in range(200):
 			#Check if this calculation has occured before
 			if set([m,n]) not in checked:
-				sys.stdout.write('\r' + 'Calculation ' + str(calculationCount + 1) + ', Unusual Products : ' + str(pandigitalCount))
+				sys.stdout.write('\r' + 'Calculation ' + str(calculationCount + 1) + ', Unusual Products : ' + str(unusualCount))
 				sys.stdout.flush()
 				string = str(m) + '*' + str(n) + '=' + str(m * n)
 				checked.append(set([m,n]))
@@ -46,7 +46,7 @@ def cli():
 		print i
 
 	print '\nTotal number of calcuulations made : ', calculationCount
-	print 'Total number of Pandigitals found : ', unusualCount
+	print 'Total number of unusual products found : ', unusualCount
 
 if __name__ == '__main__':
 	cli()
