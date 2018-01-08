@@ -1,5 +1,5 @@
 #===========================================================
-Log Date : 6th January 2017
+Log Date : 4th January 2017
 #===========================================================
 
 Pandigital Number
@@ -46,7 +46,7 @@ limits of the operands as 10000, as the largest possible 4
 digit value is 9999.
 
 #===========================================================
-Log Date : 7th January 2017
+Log Date : 6th January 2017
 #===========================================================
 
 ERROR :::: The code is running fine, but when run with small
@@ -57,7 +57,7 @@ limits such as 1000, I obtain more results such as 12 * 483
 [NOT RESOLVED]
 
 #===========================================================
-Log Date : 8th January 2017
+Log Date : 7th January 2017
 #===========================================================
 
 The running time of the code is too long. The only way to 
