@@ -90,7 +90,7 @@ times. If we check backwords we find that the maximum value
 that can possible be a solution is 9876 * 5 = 49380. As we
 can see this is not a solution either. But it is sure that 
 there are no solutions above 9876 * 5.
--->9876 * 5 = 49380
+--> 9876 * 5 = 49380
 
 Method 3 : Set length limit
 Since our solutions are all 1 through 9 unusual, all our
@@ -102,14 +102,23 @@ only be 11 characters and without product 6 characters.
 
 Calculation Reduction Analysis
 
-+-----------+-----------+
-|	Null	|	Full	|
-+-----------+-----------+
-|	41233	|	40743	|
-|	41458	|	40968	|
-|	118918	|	117696	|
-+-----------+-----------+
++-----------+-----------+-------------------+
+|	Null	|	Full	|		OUTPUT		|
++-----------+-----------+-------------------+
+|	41233	|	40743	|	4 * 1738 = 6952	|
+|	41458	|	40968	|	4 * 1963 = 7852	|
+|	118918	|	117696	|	12 * 482 = 5796	|
+|	177895	|	176166	|	18 * 297 = 5346	|
+|	266473	|	264051	|	27 * 198 = 5346	|
+|	276280	|	273786	|	28 * 157 = 4396	|
++-----------+-----------+-------------------+
 
+#===========================================================
+Final Modification
+
+Method 3 was removed as it takes almost the same time or
+perhaps more time to execute. Insted jump statements are
+introduced in scan function to skip unrequired calculations.
 #===========================================================
 OUTPUT
 
