@@ -76,3 +76,47 @@ has not aldready been performed in the past.
 --> set([45,25]) is equal to set([25,45])
 
 #===========================================================
+Log Date : 8th January 2017
+#===========================================================
+
+Working on reducing the running time of the code
+
+Method 2 : Reducing search space limit
+Currently the maximum limit of the search space is 10000.
+Which lets the code search upto 9999, which is 9999 * 9999.
+But as we know 9999 * 9999 is not a part of our solution as
+the resulting product is 99980001 and that '9' repeats many
+times. If we check backwords we find that the maximum value
+that can possible be a solution is 9876 * 5 = 49380. As we
+can see this is not a solution either. But it is sure that 
+there are no solutions above 9876 * 5.
+-->9876 * 5 = 49380
+
+Method 3 : Set length limit
+Since our solutions are all 1 through 9 unusual, all our
+solutions will and only have 9 digits. That is, if the 
+calculation was represented as a string then there would
+only be 11 characters and without product 6 characters.
+--> len("12*483=5796") --> 11
+#===========================================================
+
+Calculation Reduction Analysis
+
++-----------+-----------+
+|	Null	|	Full	|
++-----------+-----------+
+|	41233	|	40743	|
+|	41458	|	40968	|
+|	118918	|	117696	|
++-----------+-----------+
+
+#===========================================================
+OUTPUT
+
+4 * 1738 = 6952
+4 * 1963 = 7852
+12 * 482 = 5796
+18 * 297 = 5346
+27 * 198 = 5346
+28 * 157 = 4396
+#===========================================================
