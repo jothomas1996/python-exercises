@@ -1,5 +1,6 @@
+#===========================================================
 Log Date : 6th January 2017
-
+#===========================================================
 
 Pandigital Number
 
@@ -45,8 +46,8 @@ limits of the operands as 10000, as the largest possible 4
 digit value is 9999.
 
 #===========================================================
-
 Log Date : 7th January 2017
+#===========================================================
 
 ERROR :::: The code is running fine, but when run with small
 search space limits like 200, I obtain a set of solutions 
@@ -54,3 +55,24 @@ starting with, 27 * 198 = 5346. But when running with larger
 limits such as 1000, I obtain more results such as 12 * 483 
 = 5796, which is supposed to occur before 27 * 198.
 [NOT RESOLVED]
+
+#===========================================================
+Log Date : 8th January 2017
+#===========================================================
+
+The running time of the code is too long. The only way to 
+reduce the running time is to reduce the search space of 
+the code. Currently the code goes through all calculations 
+from 0 * 0 to 9999 * 9999.
+
+Method 1 : Remove redundant calculations
+45 * 25 and 25 * 45 gives the same results, and there are
+many such calculations in our search space. These reduntant
+calculations are removed using a list 'checked' where the
+multiplicand and multiplier of all completed calculations
+are stored as a set. Every time a new calculation occurs,
+we check the list to ensure that this calcculation has not
+has not aldready been performed in the past.
+--> set([45,25]) is equal to set([25,45])
+
+#===========================================================
