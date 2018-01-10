@@ -8,7 +8,7 @@ Pandigital is a number in which if there are n digits,
 then the number will contain all digits from 1 to n exactly
 once. An example for a 7 pandigital number is 2135467.
 
-Unusual Number
+Unusual Pandigital Number
 
 The product 7254 is unusual as the idetity, 39 * 186 = 7254,
 containing multiplicand, multiplier and product is 1 through
@@ -114,11 +114,10 @@ Calculation Reduction Analysis
 +-----------+-----------+-------------------+
 
 #===========================================================
-Final Modification
+Modification
 
 Method 3 was removed as it takes almost the same time or
-perhaps more time to execute. Insted jump statements are
-introduced in scan function to skip unrequired calculations.
+perhaps more time to go through all cpmparisons.
 #===========================================================
 OUTPUT
 
@@ -128,4 +127,19 @@ OUTPUT
 18 * 297 = 5346
 27 * 198 = 5346
 28 * 157 = 4396
+
+#===========================================================
+Log Date : 10th January 2017
+#===========================================================
+Final Rectification
+
+As in the above shown output, we can see that there are some
+products that repeat. For example, 18 * 297 = 5346 and 27 * 
+198 = 5346 has the same product 5346.
+
+products with 0 and 1 can never provide us a possible solution.
+So they can be removed from the search space.
+
+#===========================================================
+END
 #===========================================================
